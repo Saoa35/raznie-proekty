@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой калькулятор</title>
+</head>
+
+<body>
+    <script>
+        let inputX = +prompt("Введите первое слагаемое", 0);
+        let inputY = +prompt("Введите второе слагаемое", 0);
+
+        let x = Number(inputX);
+        let y = Number(inputY);
+
+        //let sum = x + y;
+        let sum = inputX + inputY;
+       
+        alert(`${x} + ${y} = ${sum}`);
+
+
+        let inputZ = +prompt("Введите делимое", 0);
+        let inputO = +prompt("Введите делитель", 0);
+
+        let z = Number(inputZ);
+        let o = Number(inputO);
+
+        let divide = inputZ / inputO;
+
+        alert(`${z} : ${o} = ${divide}`);
+        
+
+        let inputD = +prompt("Введите уменьшаемое", 0);
+        let inputP = +prompt("Введите уменьшитель", 0);
+
+        let d = Number(inputD);
+        let p = Number(inputP);
+
+
+        let subtract = inputD - inputP;
+
+        alert(d + ' - ' + p + ' = ' + subtract);
+
+
+        let inputQ = +prompt("Введите первое умножаемое", 0);
+        let inputT = +prompt("Введите второе умножаемое", 0);
+
+        let q = Number(inputQ);
+        let t = Number(inputT);
+
+        let multiplicate = inputQ * inputT;
+        
+        alert(q + ' * ' + t + ' = ' + multiplicate);
+    </script>
+</body>
+
+</html>

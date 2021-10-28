@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <pre>
+        Задание:
+        Создайте функцию min(a, b), которая возвращает меньшее из числе а и b
+    </pre>
+    <script>
+
+        function min (a, b) {
+            a = +prompt('Введите первое значение', 0);
+            b = +prompt('Введите второе значение', 0);
+            return a > b ? b : a;
+        }
+
+        alert(`Меньшее значение  ${min()}`);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let globalVar = +prompt('Введите любое число', 0);
+
+        function divideSum (firstNumber, secondNumber) {
+            firstNumber = +prompt('Введите первое слагаемое', 0);
+            secondNumber = +prompt('Введите второе слагаемое', 0);
+            return 'Результат деления суммы чисел ' + firstNumber + ' и ' + secondNumber + ' на число ' + globalVar + ' равен ' + (firstNumber + secondNumber) / globalVar;
+        }
+
+        console.log(divideSum());
+
+        function showNumber () {
+            return 'Вы ввели число ' + globalVar;
+        }
+
+        console.log(showNumber());
+
+    </script>
+    
+</body>
+</html>
