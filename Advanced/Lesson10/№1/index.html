@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function Obj(a, b) {
+            this.a = a;
+            this.b = b;
+
+            this.sumVal = function () {
+                document.write('Sum of values ' + (this.a + this.b) + '<br>');
+            }
+        }
+
+        let first = new Obj(3, 2);
+        let second = new Obj(10, 65);
+
+        first.sumVal();
+        second.sumVal();
+
+        Obj.MaxVal = 100;
+        Obj.startVal = function () {
+            return new Obj(1, 1)
+        }
+
+        var num1 = new Obj(20, 40);
+        num1.a = 50;
+        num1.b = 60;
+
+        var num2 = new Obj(20, 40);
+
+        Obj.MaxVal = 90;
+        
+    </script>
+    
+</body>
+</html>

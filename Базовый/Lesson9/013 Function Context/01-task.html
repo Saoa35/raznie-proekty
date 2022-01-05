@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+
+    <style>
+        #container {
+            position: relative;
+            border: 1px solid gray;
+            width: 265px;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+        #element {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="startBtn">Старт</button>
+    <button id="stopBtn">Стоп</button>
+    <button id="increaseBtn">Ускорить</button>
+    <button id="decreaseBtn">Замедлить</button>
+
+    <div id="container">
+        <div id="element"></div>
+    </div>
+
+    <script>
+        /*
+        Задание:
+
+        Доработайте сценарий. 
+        - При нажатии на кнопку стоп, анимация должна остановиться.
+        - При нажатии на кнопку ускорить, анимация должна ускориться, при повторных нажатиях скорость анимации
+          должна увеличиваться. 
+        - При нажатии на кнопку "Замедлить" - анимация замедляется, при повторных нажатиях скорость становится
+          меньше.
+        */
+
+        let element = document.querySelector("#element");
+        let elementWidth = parseInt(getComputedStyle(element).width);
+        let containerWidth = parseInt(getComputedStyle(document.querySelector("#container")).width);
+
+        let direction = 1; // 1 = 'right'; -1 = 'left'
+
+        let timerId;
+        const initialSpeed = 2;
+        let speed = initialSpeed;       
+
+        function getLeft(e) {
+            return parseInt(getComputedStyle(e).left);
+        }
+
+        function move() {
+            element.style.left = getLeft(element) + (speed * direction) + "px";
+
+            if (getLeft(element) > containerWidth - elementWidth) {
+                element.style.left = containerWidth - elementWidth + "px";
+                direction = -1;
+            } else if (getLeft(element) < 0) {
+                element.style.left = 0 + "px";
+                direction = 1;
+            }
+        }
+
+        document.querySelector("#startBtn").addEventListener("click", function () {
+            if(!timerId) {
+                timerId = setInterval(move, 1000 / 60);
+            }
+        });
+        document.querySelector("#increaseBtn").addEventListener("click", function () {
+            speed++;
+        });
+        document.querySelector("#decreaseBtn").addEventListener("click", function () {
+            speed = Math.max(--speed, initialSpeed);
+        });
+        document.querySelector("#stopBtn").addEventListener("click", function () {
+            if(timerId) {
+                clearInterval(timerId);
+                speed = initialSpeed;
+                timerId = null;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

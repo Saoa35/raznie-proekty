@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Задание:
+        Перепишите класс Numbers, используя шаблон "модуль".
+        Поля values и threshold должны быть закрыты в модуле и сохраняться в замыкании.
+        getGreaterThanThreshold и getLessThanThreshold должны быть открытыми частями модуля.
+
+        На практике, использование классов более предпочтительно, за исключением ситуаций,
+        когда процесс разработки и целевая среда выполнения не дает возможность использовать 
+        ключевое солово class
+        */
+
+
+        let numbers = (function () {
+            let values;
+            let threshold;
+
+            // Возвращает все значения из массива values, которые больше, чем значение переменной threshold
+           return {
+                getGreaterThanThreshold: function (threshold, values) {
+                return values.filter(v => v > threshold);
+                },
+
+            // возвращает все значения из массива values, которые меньше, чем значение переменной threshold 
+                getLessThanThreshold: function(threshold, values) {
+                return values.filter(v => v < threshold);
+                }
+           } 
+        }());
+
+
+        let gt = numbers.getGreaterThanThreshold(50, [10, 20, 23, 11, 5, 6, 90, 33, 45, 67]);
+        let lt = numbers.getLessThanThreshold(50, [10, 20, 23, 11, 5, 6, 90, 33, 45, 67]);
+
+        console.log(gt);
+        console.log(lt);
+    </script>
+</body>
+
+</html>
