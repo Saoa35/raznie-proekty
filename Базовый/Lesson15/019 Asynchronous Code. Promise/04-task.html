@@ -22,30 +22,25 @@
         let button = document.querySelector('button');
 
         button.addEventListener('click', function() {
-          for (let i = 0; i < 5; i++) {
-            download();
-            // if (download().isFulfilled) console.log("Все файлы скачаны");
-            // else throw new Error('Не удалось скачать данные с сервера');
-          }
+            let promises = [
+                download(),
+                download(),
+                download(),
+                download(),
+                download()
+            ];
+
+            Promise.all(promises).then(result => alert("Всей файлы скачаны"));
         });
 
         
         function download() {
-            let promise = new Promise(function (resolve, reject) {
+            return new Promise(function (resolve, reject) {
                 let random = Math.floor(Math.random() * 5001);
                 setTimeout(() => resolve("downloaded data"), random);
             });
-            // return promise;
-            if (promise.isFulfilled) return console.log("Все файлы скачаны");
         }
         
-
-        // function download() {
-        //     return new Promise(function (resolve, reject) {
-        //         let random = Math.floor(Math.random() * 5001);
-        //         setTimeout(() => resolve("downloaded data"), random);
-        //     });
-        // }
     </script>
 </body>
 
