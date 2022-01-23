@@ -21,20 +21,12 @@
         let area = document.querySelector('textarea');
 
         area.addEventListener('input', function() {
-            document.cookie = `value= ${encodeURIComponent(area.value)}; max-age=10000;`;
+            document.cookie = `${encodeURIComponent(area.value)}; max-age=10000;`;
         });
 
         let cookie = document.cookie;
 
         area.value = decodeURIComponent(cookie);
-
-        // if(cookie) {
-
-        // }
-
-        // let pageColor = cookie.substr(6);
-
-        console.log(cookie);
 
     </script>
 </body>
