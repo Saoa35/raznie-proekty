@@ -21,7 +21,7 @@
 
         let button1 = document.querySelector("#button1");
         let output = document.querySelector("#output");
-        let url = "https://jsonplaceholder.typicode.com/todos/10";
+        let url = "https://jsonplaceholder.typicode.com/todos/100000";
 
         button1.addEventListener("click", function () {
             fetch(url)
@@ -36,11 +36,11 @@
                                 output.innerHTML += "<br>completed: " + json.completed;
                             })
                     } else {
-                        console.log(response.status);
+                        console.log('Ошибка номер ' + response.status);
                      }
                 })
                 
-                .catch(error => console.log(error.message));
+                .catch(error => alert(error.message));
         });
 
     </script>
