@@ -9,6 +9,16 @@
 </head>
 
 <body>
+
+    <form style="margin: 15px 0 0 15px;">
+        Введите свойство title:
+        <input id="title" type="text" style="margin-bottom: 20px;"> <br>
+        Введите свойство body:
+        <input id="body" type="text">
+    </form>
+    <button id="button">Записать</button>
+    <div id="output"></div>
+
     <script>
         /*
         Задание:
@@ -22,14 +32,53 @@
 
         Значения для свойств title и body получите от пользователя
         Значения id и userId должны остаться равными 1 и выводить их в форме не нужно.
-        При загрузке сценария заполните форму данными получеными при обработке GET запроса на https://jsonplaceholder.typicode.com/posts/1
+        При загрузке сценария заполните форму данными получеными при обработке GET запроса на 
+        https://jsonplaceholder.typicode.com/posts/1
 
         адрес для отправки запроса
         https://jsonplaceholder.typicode.com/posts/1
 
-        для обновления сущности воспользуйтесь PUT запросом https://jsonplaceholder.typicode.com/posts/1. Обработайте ответ
+        для обновления сущности воспользуйтесь PUT запросом https://jsonplaceholder.typicode.com/posts/1. 
+        Обработайте ответ
         и выведите информацию о ошибке или об успешно завершенной операции.
         */
+
+        let button = document.querySelector("#button");
+        let output = document.getElementById('output');
+        let title = document.getElementById('title');
+        let body = document.getElementById('body');
+        let url = 'https://jsonplaceholder.typicode.com/posts/1';
+        let promise = fetch(url);
+
+        button.addEventListener("click", saveParam);
+
+        function saveParam() {
+            promise
+                .then(response => response.json())
+                .then(json => {
+                        if(title.value || body.value) {
+                                json.title = title.value;
+                                json.body = body.value;
+                                output.innerHTML = "";
+                                output.innerHTML += "<br>id: " + json.id;
+                                output.innerHTML += "<br>user id: " + json.userId;
+                                output.innerHTML += "<br>title: " + json.title;
+                                output.innerHTML += "<br>body: " + json.body;
+                        } else {
+                                output.innerHTML = "";
+                                output.innerHTML += "<br>id: " + json.id;
+                                output.innerHTML += "<br>user id: " + json.userId;
+                                output.innerHTML += "<br>title: " + json.title;
+                                output.innerHTML += "<br>body: " + json.body;
+                        }
+                                
+                            })
+                .catch(error => console.log(error.message));
+        };
+
+        // console.log(title);
+        // console.log(body);
+
     </script>
 </body>
 
