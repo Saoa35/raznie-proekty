@@ -47,31 +47,35 @@
         let output = document.getElementById('output');
         let title = document.getElementById('title');
         let body = document.getElementById('body');
+        let response;
         let url = 'https://jsonplaceholder.typicode.com/posts/1';
-        let promise = fetch(url);
 
         button.addEventListener("click", sentPutRequest);
 
 
         function saveParam() {
-          promise
+            fetch(url)
                                 .then(response => response.json())
                                 .then(json => {
-                                                json.title = title.value;
-                                                json.body = body.value; 
-                                              
+                                                title.value = json.title;
+                                                body.value = json.body; 
+                                                response = json;
                                             })
                                 
                                 .catch(error => console.log(error.message));
         };
 
+        saveParam();
+
         function sentPutRequest () {
+            let request = {...response, title: title.value, body: body.value}
+
             fetch(url, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                 },
-                body: JSON.stringify(saveParam)
+                body: JSON.stringify(request)
             })
             .then(data => {console.log(data)})
             .catch(error => console.log(error));
