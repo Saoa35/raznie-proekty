@@ -20,7 +20,14 @@
         */
 
         let output = document.querySelector('.output');
-        
+        let url = 'https://jsonplaceholder.typicode.com/todos';
+
+        fetch(url)
+                  .then(response => response.json())
+                  .then(data => {
+
+                  })
+                  .catch(error => console.log(error.message));
 
     </script>
 </body>
