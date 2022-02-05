@@ -24,11 +24,15 @@
         let url = 'https://jsonplaceholder.typicode.com/photos';
         fetch(url)
                   .then(res => res.json())
-                //   .then(json => {
-                //      output.innerHTML = '';
-                //      output.innerHTML += '' + json.url;
-                //   })
-                //   .then(resp => console.log(resp))
+                  .then(json => {
+                        console.log(json)
+                        output.textContent = '';
+                        json.map(item => {
+                            const p = document.createElement('p');
+                            p.textContent = item.url;
+                            output.append(p);
+                        })
+                  })
                   .catch(error => console.log(error.message));
 
     </script>
