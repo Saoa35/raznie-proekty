@@ -28,9 +28,9 @@
                         console.log(json)
                         output.textContent = '';
                         json.map(item => {
-                            const p = document.createElement('p');
-                            p.textContent = item.url;
-                            output.append(p);
+                            const img = document.createElement('img');
+                            // img = item.url;
+                            output.append(img);
                         })
                   })
                   .catch(error => console.log(error.message));
