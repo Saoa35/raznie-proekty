@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+    <div id="output"></div>
+
     <script>
         /*
         Задание:
@@ -16,6 +19,12 @@
         https://jsonplaceholder.typicode.com/photos
         и выведет на странице все изображения в виде <img>, которые будут получены в ответе.
         */
+
+        let output = document.getElementById('output');
+        let url = 'https://jsonplaceholder.typicode.com/photos';
+        fetch(url)
+                  .then(res => res.json())
+                  .then(json => )
 
         
     </script>
