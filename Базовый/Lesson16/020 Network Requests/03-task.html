@@ -29,7 +29,7 @@
                         output.textContent = '';
                         json.map(item => {
                             const img = document.createElement('img');
-                            // img = item.url;
+                            img.src = item.url;
                             output.append(img);
                         })
                   })
