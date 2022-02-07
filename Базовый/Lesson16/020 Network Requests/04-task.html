@@ -25,7 +25,10 @@
         fetch(url)
                   .then(response => response.json())
                   .then(data => {
-
+                    // console.log(data);
+                    output.textContent = '';
+                    let table = document.createElement('table')
+                    
                   })
                   .catch(error => console.log(error.message));
 
