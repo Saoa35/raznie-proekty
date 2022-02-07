@@ -25,22 +25,21 @@
         fetch(url)
                   .then(response => response.json())
                   .then(data => {
-                    // console.log(data);
-                    // output.textContent = '';
                     let table = document.createElement('table')
                     table.style.border = '2px solid black';
                     output.append(table);
 
                     for(let key in data) {
-                        // console.log(key)
+                        
                         let tr = document.createElement('tr');
                         let td1 = document.createElement('td');
                         let td2 = document.createElement('td');
 
                         td1.style.border = '1px solid black';
+                        td2.style.border = '1px solid black';
 
                         td1.append(key);
-                        td2.append(data[key]);
+                        td2.append(JSON.stringify(data[key]));
                         tr.append(td1);
                         tr.append(td2);
                         table.append(tr);
