@@ -35,23 +35,29 @@
                             let tr = document.createElement('tr');
                             let td1 = document.createElement('td');
                             let td2 = document.createElement('td');
+                            let data2 = data[key];
     
                             td1.style.border = '1px solid black';
                             td2.style.border = '1px solid black';
 
-                            // console.log(key.length);
+                            // console.log(data2.key.length);
 
-                            for(let key2 in data[key]) {
-                                // td1.append(JSON.stringify(key[data[key]]));
-                                console.log(key2);
+                            for(let key2 in data2) {
+                                let data3 = data2[key2];
+                                console.log(data3.length);
+
+                                // for(let i = 0; i < data3.length; i++) {
+
+                                // }
+                                td1.append(key2);
+                                td2.append(data3);
+                                // console.log(data2.length);
+                            
                             }
                             
-                            // td1.append(JSON.stringify(data[key].i));
-                            // td2.append(data.);
-                            
-                            // tr.append(td1);
-                            // // tr.append(td2);
-                            // table.append(tr);
+                            tr.append(td1);
+                            tr.append(td2);
+                            table.append(tr);
                         }
                         
 
