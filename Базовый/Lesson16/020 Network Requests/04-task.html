@@ -43,19 +43,21 @@
                             // console.log(data2.key.length);
 
 
-                            for(let key2 in data2) {
-                                let data3 = data2[key2];
+                            // for(let key2 in data2) {
+                            //     let data3 = data2[key2];
                                 // for(let i = 0; i < data3.length; i++) {
 
                                 // }
+
+                                data.forEach(element => td1.append(element));
                                
-                                td1.append(key2);
+                                // td1.append(key2);
                                 // td2.append(data2[key2]);
                                 // console.log(key2);
                                 tr.append(td1);
                                 // tr.append(td2);
                                 table.append(tr);
-                            }
+                            // }
                             
                             // tr.append(td1);
                             // tr.append(td2);
