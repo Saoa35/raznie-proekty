@@ -32,27 +32,49 @@
 
                     for(let key in data) {
                         
-                            // let tr = document.createElement('tr');
-                            // let td1 = document.createElement('td');
-                            // let td2 = document.createElement('td');
+                            let tr = document.createElement('tr');
+                            let td1 = document.createElement('td');
+                            let td2 = document.createElement('td');
                             let data2 = data[key];
     
-                            // td1.style.border = '1px solid black';
-                            // td2.style.border = '1px solid black';
+                            td1.style.border = '1px solid black';
+                            td2.style.border = '1px solid black';
 
-                            
+                            let obj1 = Object.keys(data2);
+
+                            // obj1.forEach(el => {
+                                // let tr = document.createElement('tr');
+                                // let td1 = document.createElement('td');
+                                // td1.append(el);
+                                // tr.append(td1); 
+                                // table.append(tr);
+                                // td1.style.border = '1px solid black';
+                            // });
+
+                            // tr.append(td1); 
+                            // table.append(tr);
+
+                            // console.log(obj1);
                             
 
                             let obj2 = Object.values(data2);
 
-                            obj2.forEach(el => {
-                                let tr = document.createElement('tr');
-                                let td1 = document.createElement('td');
-                                td1.append(el);
+                            for(let i = 0; i < data2.length; i++) {
+                                td1.append(...obj2[i]);
                                 tr.append(td1);
-                                table.append(tr);
-                                td1.style.border = '1px solid black';
-                            });
+                            }
+
+                            // obj2.forEach(el => {
+                                // let tr = document.createElement('tr');
+                                // let td1 = document.createElement('td');
+                                // td2.append(el);
+                                // tr.append(td2);
+                                // table.append(tr);
+                                // td1.style.border = '1px solid black';
+                            // });
+
+                            // tr.append(td2)
+                            table.append(tr);
 
                             // console.log(obj2);
 
@@ -76,6 +98,7 @@
                             // tr.append(td2);
                             // table.append(tr);
                         }
+                        
                         
 
 
