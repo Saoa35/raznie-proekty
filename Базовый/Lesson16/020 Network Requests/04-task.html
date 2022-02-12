@@ -32,15 +32,29 @@
 
                     for(let key in data) {
                         
-                            let tr = document.createElement('tr');
-                            let td1 = document.createElement('td');
-                            let td2 = document.createElement('td');
+                            // let tr = document.createElement('tr');
+                            // let td1 = document.createElement('td');
+                            // let td2 = document.createElement('td');
                             let data2 = data[key];
     
-                            td1.style.border = '1px solid black';
-                            td2.style.border = '1px solid black';
+                            // td1.style.border = '1px solid black';
+                            // td2.style.border = '1px solid black';
 
-                            // console.log(data2.key.length);
+                            
+                            
+
+                            let obj2 = Object.values(data2);
+
+                            obj2.forEach(el => {
+                                let tr = document.createElement('tr');
+                                let td1 = document.createElement('td');
+                                td1.append(el);
+                                tr.append(td1);
+                                table.append(tr);
+                                td1.style.border = '1px solid black';
+                            });
+
+                            // console.log(obj2);
 
 
                             // for(let key2 in data2) {
@@ -49,14 +63,13 @@
 
                                 // }
 
-                                data.forEach(element => td1.append(element));
                                
                                 // td1.append(key2);
                                 // td2.append(data2[key2]);
-                                // console.log(key2);
-                                tr.append(td1);
+                             
+                                // tr.append(td1);
                                 // tr.append(td2);
-                                table.append(tr);
+                                // table.append(tr);
                             // }
                             
                             // tr.append(td1);
