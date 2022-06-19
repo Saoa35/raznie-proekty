@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [];
+        // for(let i = 0; i < 10; i++) {
+        //     let randomValue = Math.floor(Math.random() * 101);
+        //     arr.push(randomValue);
+        // }
+
+        // console.log(arr);
+        // alert(arr);
+
+    // <pre>
+	//     Задание:
+	//     Напишите сценарий, который найдет минимальное, максимальное значения массива, а также выведет сумму всех элементов массива.
+    // </pre>
+
+		// let arr = [0, 20, 4, 6, 11, 9, 125, 1, 8, -3, 3];
+
+		// let minVal = Math.min(...arr);
+		// let maxVal = Math.max(...arr);
+		// let result = 0;
+
+		// for(let i = 0; i < arr.length; i++) {
+		// 	result += arr[i];
+		// }
+
+		// console.log(result);
+
+
+		// <pre>
+    //     Задание:
+    //     Напишите сценарий, который найдет в массиве все отрицательные значения и заменить их на значения 0.
+    //     После этого выведет на экран все элементы массива.
+    // </pre>
+
+
+    // let arr = [10, 20, -2, 6, 11, -10, 125, -3, 8, 0, 3];
+
+	// 			// 1 way:
+
+	// 		for(let i = 0; i < arr.length; i++) {
+	// 			if(arr[i] < 0) {
+	// 				arr[i] = 0
+	// 			}
+	// 		}
+
+			// 2 way:
+
+			// let arr2 = arr.forEach(el => el < 0);
+
+			// console.log(arr);
+
+
+    // <pre>
+    //     Задание:
+    //     Дано массив. Создайте на оснвое значений этого массива два новых массива. В один массив поместите все четные значения, а во второй все нечетные.
+    //     Выведите на экран значения, которые вошли в первый массив и во второй массив.
+    // </pre>
+
+        // let values = [10, 20, 5, 7, 11, 8, 125, 4, 8, 3, 23];
+
+        // let odd = [];
+        // let even = [];
+
+        // for(let i = 0; i < values.length; i++) {
+        //   values[i] % 2 === 0 ? even.push(values[i]) : odd.push(values[i])
+        // }
+
+        // values.forEach(el => el % 2 == 0 ? even.push(el): odd.push(el));
+
+        // console.log(odd);
+        // console.log(even);
+
+
+    // <pre>
+    //     Задание:
+    //     Найдите первый положительный элемент массива и выведите его на экран.
+    // </pre>
+    
+
+
+        // let values = [-1, -5, -6, -3, -10, -5, 3, 4, -1, -8, 1, -10, 3];
+
+        // for(let i = 0; i < values.length; i++){
+        //   if(values[i] > 0) {
+        //     alert(values[i]);
+        //     break;
+        //   }
+        // }
+
+    //     <pre>
+    //     Задание:
+    //     Данно массив. Поменяйте элемент с максимальным значением местами с элементом с минимальным значением.
+    // </pre>
+    
+
+        let values = [10, 20, 4, 6, 11, 9, 125, 1, 8, 0, 3];
+
+        let maxVal = Math.max(...values);
+        let minVal = Math.min(...values);
+
+        let maxValIndex = values.indexOf(Math.max(...values));
+        let minValIndex = values.indexOf(Math.min(...values));
+
+        // console.log(maxValIndex);
+        // console.log(minValIndex);
+
+        for(let i = 0; i < values.length; i++) {
+          
+        }
+        
+
+
+    </script>
+</body>
+</html>
