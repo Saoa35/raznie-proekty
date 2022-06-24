@@ -35,15 +35,17 @@
         let secondDiv = document.querySelector('body > div:nth-child(2)');
         let lastDiv = document.querySelector('body > div:nth-child(3)');
 
+        let borderColor = '2px solid red';
+
         document.addEventListener('keydown', function (e) {
             if (e.key == 1) {
-                firstDiv.style.border = '2px solid red';
+                firstDiv.style.border = borderColor;
             } else if (e.key == 2) {
-                secondDiv.style.border = '2px solid red';
+                secondDiv.style.border = borderColor;
             } else if (e.key == 3) {
-                lastDiv.style.border = '2px solid red';
+                lastDiv.style.border = borderColor;
             } else if (e.ctrlKey && e.code == 'KeyA') {
-                div.forEach(e => e.style.border = '2px solid red');
+                div.forEach(e => e.style.border = borderColor);
             }
         });
 
