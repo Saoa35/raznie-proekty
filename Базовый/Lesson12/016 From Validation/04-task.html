@@ -299,7 +299,8 @@
             formService.fillForm(listService.selectedData);
         });
 
-        saveButton.addEventListener("click", function () {
+        saveButton.addEventListener("click", function (e) {
+            e.preventDefault();
             formService.saveForm();
         });
 
