@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+
+</head>
+
+<body>
+   
+
+    <script>
+
+       function betterThanAverage(classPoints, yourPoints) {
+        console.log(classPoints.filter(i => i > yourPoints).length);
+        console.log(classPoints.length);
+        console.log(classPoints.concat(yourPoints));
+        return classPoints.concat(yourPoints).filter(i => i >= yourPoints).length > classPoints.length / 2;
+        //  false : true;
+        }
+
+        console.log(betterThanAverage([21,13,63,70,24,42,73,91,61,80,85,18,15,82,10,14,48,65,4,65,31,13,99,23,26,32,42,72,2,35,67,93,89,46,39,0,6,99,80,94,28,42,40,94,44,31,64,53,95,47], 47));
+
+        // function betterThanAverage(classPoints, yourPoints) {
+        //     return classPoints.filter(i => i > yourPoints).length <= classPoints.length / 2;
+        // }
+
+    </script>
+</body>
+
+</html>
