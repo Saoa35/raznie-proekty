@@ -28,7 +28,7 @@
 
         function asyncOperation() {
             let promise = new Promise(function (resolve, reject) {
-                setTimeout(() => resolve(Math.floor(Math.random() * 5001)), 2000)
+               let result = setTimeout(() => resolve(Math.floor(Math.random() * 5001)), 2000)
             });
             return promise.then(result => alert(result));
         }
