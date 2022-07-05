@@ -24,101 +24,56 @@
 
         fetch(url)
                   .then(response => response.json())
-                  .then(log => console.log(log))
                   .then(data => {
                     let table = document.createElement('table')
                     table.style.border = '2px solid black';
                     output.append(table);
 
+                    // for(let key in data) {
+                        
+                    //         let tr = document.createElement('tr');
+                    //         let td1 = document.createElement('td');
+                    //         let td2 = document.createElement('td');
+                    //         let data2 = data[key];
+    
+                    //         td1.style.border = '1px solid black';
+                    //         td2.style.border = '1px solid black';
+                            
+                    //         for (const [key, value] of Object.entries(data2)) {
+                    //             let tr = document.createElement('tr');
+                    //             let td1 = document.createElement('td');
+                    //             let td2 = document.createElement('td');
+
+                    //             td1.style.border = '1px solid black';
+                    //             td2.style.border = '1px solid black';
+
+                    //             td1.append(key);
+                    //             td2.append(value);
+                    //             tr.append(td1);
+                    //             tr.append(td2);
+                    //             table.append(tr);
+                    //         }
+                    //     }
+                        
+                        
+
+
 
                     for(let key in data) {
                         
-                            let tr = document.createElement('tr');
-                            let td1 = document.createElement('td');
-                            let td2 = document.createElement('td');
-                            let data2 = data[key];
-    
-                            td1.style.border = '1px solid black';
-                            td2.style.border = '1px solid black';
+                        let tr = document.createElement('tr');
+                        let td1 = document.createElement('td');
+                        let td2 = document.createElement('td');
 
-                            let obj1 = Object.keys(data2);
+                        td1.style.border = '1px solid black';
+                        td2.style.border = '1px solid black';
 
-                            // obj1.forEach(el => {
-                                // let tr = document.createElement('tr');
-                                // let td1 = document.createElement('td');
-                                // td1.append(el);
-                                // tr.append(td1); 
-                                // table.append(tr);
-                                // td1.style.border = '1px solid black';
-                            // });
-
-                            // tr.append(td1); 
-                            // table.append(tr);
-
-                            // console.log(obj1);
-                            
-
-                            let obj2 = Object.values(data2);
-
-                            for(let i = 0; i < data2.length; i++) {
-                                td1.append(...obj2[i]);
-                                tr.append(td1);
-                            }
-
-                            // obj2.forEach(el => {
-                                // let tr = document.createElement('tr');
-                                // let td1 = document.createElement('td');
-                                // td2.append(el);
-                                // tr.append(td2);
-                                // table.append(tr);
-                                // td1.style.border = '1px solid black';
-                            // });
-
-                            // tr.append(td2)
-                            table.append(tr);
-
-                            // console.log(obj2);
-
-
-                            // for(let key2 in data2) {
-                            //     let data3 = data2[key2];
-                                // for(let i = 0; i < data3.length; i++) {
-
-                                // }
-
-                               
-                                // td1.append(key2);
-                                // td2.append(data2[key2]);
-                             
-                                // tr.append(td1);
-                                // tr.append(td2);
-                                // table.append(tr);
-                            // }
-                            
-                            // tr.append(td1);
-                            // tr.append(td2);
-                            // table.append(tr);
-                        }
-                        
-                        
-
-
-
-                //     for(let key in data) {
-                        
-                //         let tr = document.createElement('tr');
-                //         let td1 = document.createElement('td');
-                //         let td2 = document.createElement('td');
-
-                //         td1.style.border = '1px solid black';
-                //         td2.style.border = '1px solid black';
-
-                //         td1.append(key);
-                //         td2.append(JSON.stringify(data[key]));
-                //         tr.append(td1);
-                //         tr.append(td2);
-                //         table.append(tr);
-                //     }
+                        td1.append(key);
+                        td2.append(JSON.stringify(data[key]));
+                        tr.append(td1);
+                        tr.append(td2);
+                        table.append(tr);
+                    }
                   })
                   .catch(error => console.log(error.message));
 
