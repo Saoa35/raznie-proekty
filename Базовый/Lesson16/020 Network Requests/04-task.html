@@ -24,6 +24,7 @@
 
         fetch(url)
                   .then(response => response.json())
+                  .then(log => console.log(log))
                   .then(data => {
                     let table = document.createElement('table')
                     table.style.border = '2px solid black';
